@@ -108,6 +108,9 @@ const techStacks = [
   { icon: "css.svg", language: "CSS" },
   { icon: "javascript.svg", language: "JavaScript" },
   { icon: "capcut.png", language: "Capcut" },
+  { icon: "react.png", language: "React.js" },
+  { icon: "supabase.webp", language: "Supabase" },
+   { icon: "Typescript.webp", language: "Typescript" },
   { icon: "firebase.svg", language: "Firebase" },
   { icon: "netlify.png", language: "Netlify" },
  
