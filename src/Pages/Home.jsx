@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, memo } from "react"
 import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucide-react"
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Lanyard from '../components/Lanyard'
 
 // Memoized Components
 const StatusBadge = memo(() => (
@@ -78,7 +78,7 @@ const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 const WORDS = ["PPLG Student", "Problem Solver", "Web Developer", "Tech Enthusiast"];
-const TECH_STACK = ["HTML", "Javascript", "CSS", "Firebase"];
+const TECH_STACK = ["React", "Javascript", "Typescript", "Supabase"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/rappskuyy" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/rappskuyy/" },
@@ -91,7 +91,6 @@ const Home = () => {
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isHovering, setIsHovering] = useState(false)
 
   // Optimize AOS initialization
   useEffect(() => {
@@ -140,23 +139,6 @@ const Home = () => {
     );
     return () => clearTimeout(timeout);
   }, [handleTyping]);
-
-  // Lottie configuration
-  const lottieOptions = {
-    src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-      progressiveLoad: true,
-    },
-    style: { width: "100%", height: "100%" },
-    className: `w-full h-full transition-all duration-500 ${
-      isHovering 
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2" 
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
-    }`
-  };
 
   return (
     <div className="min-h-screen bg-[#030014] overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] " id="Home">
@@ -208,36 +190,20 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Column - Optimized Lottie Animation */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
+            {/* Right Column - 3D Lanyard */}
+            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-[460px] sm:h-[520px] lg:h-[600px] xl:h-[720px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               data-aos="fade-left"
               data-aos-delay="600">
               <div className="relative w-full opacity-90">
-                <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
-                  isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                }`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out opacity-30 scale-100">
                 </div>
 
-          <div className={`relative lg:left-12 z-10 w-full opacity-90 transform transition-transform duration-500 ${
-  isHovering ? "scale-105" : "scale-100"
-}`}>
-  <img 
-    src="/pinguin.gif" 
-    alt="Coding"
-    width={400}
-    height={400}
-    className="mx-auto max-w-[400px] max-h-[400px] w-auto h-auto object-contain"
-  />
-</div>
+                <div className="relative z-10 w-full h-full">
+                  <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+                </div>
 
-                <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
-                  isHovering ? "opacity-50" : "opacity-20"
-                }`}>
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${
-                    isHovering ? "scale-110" : "scale-100"
-                  }`}>
+                <div className="absolute inset-0 pointer-events-none transition-all duration-700 opacity-30">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 scale-100">
                   </div>
                 </div>
               </div>
