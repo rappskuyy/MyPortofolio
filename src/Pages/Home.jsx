@@ -141,12 +141,12 @@ const Home = () => {
   }, [handleTyping]);
 
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] " id="Home">
+    <div className="min-h-screen bg-[#030014] overflow-x-hidden px-[5%] sm:px-[5%] lg:px-[10%] pt-24 sm:pt-28 lg:pt-0 pb-16 sm:pb-10 lg:pb-0" id="Home">
       <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
-        <div className="container mx-auto  min-h-screen ">
-          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-10 xl:gap-16">
+        <div className="container mx-auto min-h-screen">
+          <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-center min-h-screen lg:h-screen md:justify-between gap-10 sm:gap-12 lg:gap-10 xl:gap-16">
             {/* Left Column */}
-            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0"
+            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0 pt-2 sm:pt-4 lg:pt-0"
               data-aos="fade-right"
               data-aos-delay="200">
               <div className="space-y-4 sm:space-y-6">
@@ -191,7 +191,7 @@ const Home = () => {
             </div>
 
             {/* Right Column - 3D Lanyard */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-[58%] h-[560px] sm:h-[680px] lg:h-[820px] xl:h-[940px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
+            <div className="w-full py-2 sm:py-0 lg:w-[58%] h-[250px] sm:h-[520px] lg:h-[820px] xl:h-[940px] relative flex items-center justify-center order-2 lg:order-2 mt-10 sm:mt-6 lg:mt-0 mb-10 sm:mb-0"
               data-aos="fade-left"
               data-aos-delay="600">
               <div className="relative w-full h-full opacity-90 flex items-center justify-center">

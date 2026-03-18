@@ -17,3 +17,9 @@
   width: 100% !important;
   height: 100% !important;
 }
+
+@media (max-width: 640px) {
+  .lanyard-wrapper {
+    min-height: 250px;
+  }
+}
