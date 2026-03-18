@@ -1,15 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="64" viewBox="0 0 256 64">
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="498" viewBox="0 0 2048 498">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#173ec9"/>
-      <stop offset="50%" stop-color="#2a6fff"/>
-      <stop offset="100%" stop-color="#16c7ff"/>
+    <linearGradient id="bg" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#2142cc"/>
+      <stop offset="45%" stop-color="#2f5fe0"/>
+      <stop offset="100%" stop-color="#2cb4e7"/>
     </linearGradient>
+    <filter id="soften" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.4" />
+    </filter>
   </defs>
-  <rect width="256" height="64" fill="url(#bg)"/>
-  <rect y="8" width="256" height="4" fill="#ffffff" fill-opacity="0.28"/>
-  <rect y="52" width="256" height="3" fill="#ffffff" fill-opacity="0.18"/>
-  <g fill="#ffffff" fill-opacity="0.75" font-family="Arial, sans-serif" font-size="16" font-weight="700">
-    <text x="12" y="40">RAFFASYA • FRONTEND DEV •</text>
+
+  <rect width="2048" height="498" fill="url(#bg)"/>
+  <rect x="0" y="45" width="2048" height="34" fill="#a9c4ff" fill-opacity="0.42"/>
+  <rect x="0" y="421" width="2048" height="22" fill="#84a8ff" fill-opacity="0.34"/>
+
+  <g
+    fill="#e7f0ff"
+    fill-opacity="0.92"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="132"
+    font-weight="700"
+    letter-spacing="2"
+    filter="url(#soften)"
+  >
+    <text x="42" y="315">RAFFASYA • FRONTEND DEV •</text>
   </g>
 </svg>
